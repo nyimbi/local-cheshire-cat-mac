@@ -40,20 +40,12 @@ services:
 
   ollama:
     container_name: ollama_cat
-    image: ollama/ollama:0.1.9
+    image: ollama/ollama:0.1.12
     volumes:
       - ./ollama:/root/.ollama
     expose:
       - 11434
-    environment:
-      - gpus=all
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: 1
-              capabilities: [gpu]
+  
 
 
 
